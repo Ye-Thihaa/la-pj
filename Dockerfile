@@ -1,56 +1,25 @@
-# Use Python 3.9 slim image
-FROM python:3.9-slim
+# Base image
+FROM python:3.10-slim
 
 # Set working directory
 WORKDIR /app
 
-# Install system dependencies
+# Install system dependencies required for dlib & OpenCV
 RUN apt-get update && apt-get install -y \
-    libgl1-mesa-glx \
-    libglib2.0-0 \
-    libsm6 \
-    libxext6 \
-    libxrender-dev \
-    libgomp1 \
-    libglib2.0-0 \
-    libgtk-3-0 \
-    libavcodec-dev \
-    libavformat-dev \
-    libswscale-dev \
-    libv4l-dev \
-    libxvidcore-dev \
-    libx264-dev \
-    libjpeg-dev \
-    libpng-dev \
-    libtiff-dev \
-    gfortran \
-    openexr \
-    libatlas-base-dev \
-    python3-dev \
-    libtbb2 \
-    libtbb-dev \
-    libdc1394-22-dev \
+    build-essential cmake gfortran git wget curl \
+    libsm6 libxext6 libxrender-dev \
+    libgtk2.0-dev pkg-config \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy requirements first to leverage Docker cache
+# Copy requirements and install
 COPY requirements.txt .
-
-# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Copy application code
+# Copy project files
 COPY . .
 
-# Create static directory for uploaded files
-RUN mkdir -p static/uploads
+# Expose Flask port
+EXPOSE 5000
 
-# Set environment variables
-ENV FLASK_APP=app.py
-ENV FLASK_ENV=production
-ENV PORT=10000
-
-# Expose port
-EXPOSE 10000
-
-# Run the application
-CMD ["gunicorn", "--bind", "0.0.0.0:10000", "--workers", "1", "--timeout", "300", "app:app"]
+# Run app
+CMD ["python", "app.py"]

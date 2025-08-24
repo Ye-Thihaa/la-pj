@@ -4,8 +4,6 @@ import matplotlib.pyplot as plt
 import sys
 import os
 from sklearn.cluster import SpectralClustering
-import tkinter as tk
-from tkinter import filedialog
 
 
 def segment_image_spectral(image, num_clusters=5, downscale=150, neighbors=50):
@@ -41,17 +39,12 @@ def segment_image_spectral(image, num_clusters=5, downscale=150, neighbors=50):
 
 if __name__ == "__main__":
     try:
-        # Use a Tkinter file dialog to get the image path
-        root = tk.Tk()
-        root.withdraw()  # Hide the main window
-        input_filename = filedialog.askopenfilename(
-            title="Select an image file",
-            filetypes=[("Image Files", "*.jpg;*.jpeg;*.png;*.bmp")]
-        )
-
-        if not input_filename:
-            print("No file was selected. Exiting.")
-            sys.exit(1)
+        # Get image path from command line or set it directly here
+        if len(sys.argv) > 1:
+            input_filename = sys.argv[1]
+        else:
+            # Hardcode your image path here if you don’t want to use command line
+            input_filename = "my_image.jpg"
 
         if not os.path.exists(input_filename):
             print(f"Error: The file '{input_filename}' was not found.")

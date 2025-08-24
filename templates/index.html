@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Face App - Advanced Face Processing</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,8 +36,13 @@
         }
 
         @keyframes float {
-            0% { transform: translateY(0px) rotate(0deg); }
-            100% { transform: translateY(-100vh) rotate(360deg); }
+            0% {
+                transform: translateY(0px) rotate(0deg);
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+            }
         }
 
         .container {
@@ -63,6 +69,7 @@
                 opacity: 0;
                 transform: translateY(50px) scale(0.9);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0) scale(1);
@@ -84,6 +91,7 @@
             from {
                 filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
             }
+
             to {
                 filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
             }
@@ -108,8 +116,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+
+            0%,
+            100% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.05);
+            }
         }
 
         /* Features Section */
@@ -126,6 +141,7 @@
                 opacity: 0;
                 transform: translateY(30px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -324,9 +340,12 @@
                 transform: translateY(100vh) rotate(0deg);
                 opacity: 0;
             }
-            10%, 90% {
+
+            10%,
+            90% {
                 opacity: 1;
             }
+
             100% {
                 transform: translateY(-100vh) rotate(360deg);
                 opacity: 0;
@@ -378,6 +397,7 @@
         }
     </style>
 </head>
+
 <body>
     <div class="floating-shape shape1"></div>
     <div class="floating-shape shape2"></div>
@@ -398,7 +418,9 @@
             <div class="feature-card">
                 <div class="feature-icon">🔄</div>
                 <h3>Face Morph</h3>
-                <p>Transform faces seamlessly using advanced linear algebra techniques. Our morphing algorithm uses eigenface decomposition and weighted interpolation to create smooth transitions between facial features, landmarks, and expressions.</p>
+                <p>Transform faces seamlessly using advanced linear algebra techniques. Our morphing algorithm uses
+                    eigenface decomposition and weighted interpolation to create smooth transitions between facial
+                    features, landmarks, and expressions.</p>
                 <p><strong>Key Features:</strong></p>
                 <ul style="text-align: left; margin: 15px 0; opacity: 0.9;">
                     <li>• Delaunay triangulation for precise facial mapping</li>
@@ -412,7 +434,9 @@
             <div class="feature-card">
                 <div class="feature-icon">🔀</div>
                 <h3>Face Swap</h3>
-                <p>Swap faces with precision using cutting-edge computer vision and linear transformations. Our algorithm detects facial landmarks, calculates optimal transformation matrices, and seamlessly blends faces while preserving natural lighting and skin tones.</p>
+                <p>Swap faces with precision using cutting-edge computer vision and linear transformations. Our
+                    algorithm detects facial landmarks, calculates optimal transformation matrices, and seamlessly
+                    blends faces while preserving natural lighting and skin tones.</p>
                 <p><strong>Key Features:</strong></p>
                 <ul style="text-align: left; margin: 15px 0; opacity: 0.9;">
                     <li>• 68-point facial landmark detection</li>
@@ -427,16 +451,25 @@
         <!-- About Section -->
         <section class="about">
             <h2>About This Project</h2>
-            <p>Face App is an advanced computer vision application built with Python, leveraging the power of linear algebra and mathematical transformations to manipulate facial images. The project demonstrates practical applications of eigenvalue decomposition, matrix operations, and geometric transformations in real-world image processing scenarios.</p>
-            <p>Our algorithms are implemented using NumPy for efficient matrix operations, OpenCV for computer vision tasks, and custom mathematical models for facial feature analysis. The application showcases how linear algebra concepts like vector spaces, transformations, and interpolation can be applied to create sophisticated image processing tools.</p>
+            <p>Face App is an advanced computer vision application built with Python, leveraging the power of linear
+                algebra and mathematical transformations to manipulate facial images. The project demonstrates practical
+                applications of eigenvalue decomposition, matrix operations, and geometric transformations in real-world
+                image processing scenarios.</p>
+            <p>Our algorithms are implemented using NumPy for efficient matrix operations, OpenCV for computer vision
+                tasks, and custom mathematical models for facial feature analysis. The application showcases how linear
+                algebra concepts like vector spaces, transformations, and interpolation can be applied to create
+                sophisticated image processing tools.</p>
 
-            <a href="https://github.com/yourusername/face-app" class="github-btn" target="_blank" rel="noopener noreferrer">
+            <a href="https://github.com/Ye-Thihaa/la-pj.git" class="github-btn" target="_blank"
+                rel="noopener noreferrer">
                 <svg class="github-icon" viewBox="0 0 24 24">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z"/>
+                    <path
+                        d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12Z" />
                 </svg>
                 View on GitHub
             </a>
         </section>
     </div>
 </body>
+
 </html>

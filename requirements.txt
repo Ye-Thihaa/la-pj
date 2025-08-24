@@ -1,0 +1,7 @@
+flask
+opencv-python-headless
+dlib
+numpy
+scipy
+scikit-learn
+matplotlib

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Morph</title>
+</head>
+<body>
+    <h2>Upload an image for segmentation</h2>
+    <form method="post" enctype="multipart/form-data">
+        <input type="file" name="image" required>
+        <button type="submit">Process</button>
+    </form>
+
+    {% if result %}
+        <h3>Result:</h3>
+        <img src="{{ url_for('static', filename=result) }}" width="400">
+    {% endif %}
+
+    <br><a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

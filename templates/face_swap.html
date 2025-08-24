@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Face Swap</title>
+</head>
+<body>
+    <h2>Upload two images for face swap</h2>
+    <form method="post" enctype="multipart/form-data">
+        Source: <input type="file" name="source" required><br><br>
+        Target: <input type="file" name="target" required><br><br>
+        <button type="submit">Swap Faces</button>
+    </form>
+
+    {% if result %}
+        <h3>Result:</h3>
+        <img src="{{ url_for('static', filename=result) }}" width="400">
+    {% endif %}
+
+    <br><a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
